@@ -28,7 +28,6 @@ var chunk = {
         var canvasContainer = document.createElement('div');
         $(document.body).append(canvasContainer);
         canvasContainer.style.position="absolute";
-        canvasContainer.style.position="block";
         canvasContainer.style.left="0px";
         canvasContainer.style.top="0px";
         canvasContainer.style.width=$(document).width()+"px";
@@ -41,6 +40,8 @@ var chunk = {
         myCanvas.height=$(document).height()
         myCanvas.style.overflow = 'visible';
         myCanvas.style.position = 'absolute';
+        myCanvas.style.left="0px";
+        myCanvas.style.top="0px";
 
         this.ctx = myCanvas.getContext("2d");
         this.ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
