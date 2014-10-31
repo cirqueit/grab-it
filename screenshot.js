@@ -12,6 +12,7 @@ var chunk = {
     px: 0,
     py: 0,
     dist: 0,
+    minDist: 10,
     angle: 0,
     drawChunk : function() {
         this.setPolar();
@@ -75,7 +76,11 @@ var chunk = {
     grabChunk : function(){
         this.setPolar();
         this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
-        setTimeout(function(){chunk.takeScreenshot(chunk.reduceChunk);}, 100);
+        if(this.dist > this.minDist){
+            setTimeout(function(){chunk.takeScreenshot(chunk.reduceChunk);}, 100);
+        } else {
+            console.log("too small...");
+        }
         
     },
     reduceChunk : function(canvas) {
