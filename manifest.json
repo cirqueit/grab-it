@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "Get chunk",
+  "description": "This extension allows capturing square image",
+  "version": "1.0",
+
+  "browser_action": {
+    "icons": ["icon.png"],
+    "name": "Click chunk"
+  },
+  "background": { "scripts": ["background.js"] },
+  "content_scripts": [{
+      "matches": ["<all_urls>"],
+      "js": ["jquery-1.11.1.min.js", "screenshot.js"]
+      }],
+  "permissions": [
+      "tabs", "<all_urls>"]
+}
